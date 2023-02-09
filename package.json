@@ -1,6 +1,6 @@
 {
   "name": "multi-destination-stream",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Multi destination stream",
   "main": "build/index.js",
   "types": "build/lib/index.d.ts",
