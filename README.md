@@ -39,7 +39,7 @@ await pipeline(Readable.from([1, 1, 2, 2, 1, 1, 2, 2]), stream);
 
 # API
 
-### `createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>): Duplex;`
+### `createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>): Duplex`
 
 returns `Duplex` stream.
 
@@ -56,7 +56,7 @@ The generics:
 - `I` stands for Input data type
 - `O` is optional and stands for Ouput of Duplex destination type.
 
-### `pipelineWithOutput<O>(...pipeline parameters): Promise<O[]>;`
+### `pipelineWithOutput<O>(...pipeline parameters): Promise<O[]>`
 
 this works exactly as [pipeline](https://nodejs.org/api/stream.html#streampipelinestreams-options) but collects all end outputs into array and returns them when pipeline is ended.
 
