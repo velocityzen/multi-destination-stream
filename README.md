@@ -39,7 +39,7 @@ await pipeline(Readable.from([1, 1, 2, 2, 1, 1, 2, 2]), stream);
 
 # API
 
-### `createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>);`
+### `createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>): Duplex;`
 
 returns `Duplex` stream.
 
