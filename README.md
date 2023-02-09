@@ -11,7 +11,7 @@ Transform stream to output data to mutliple destinations
 
 # Usage
 
-Here is example that splits the input data into two destination writable streams based on number. Ones go into writable for ones and twos go to second writable for twos
+Here is an example that splits the input data into two destinations (writable streams) based on a number. Ones go into the writable for ones and twos go to the second writable for twos
 
 ```ts
 import { pipeline } from "stream/promises";
@@ -39,7 +39,7 @@ await pipeline(Readable.from([1, 1, 2, 2, 1, 1, 2, 2]), stream);
 
 # API
 
-## createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>);
+## `createMultiDestinationStream<I, O>(options: MultiDestinationStreamOptions<I>);`
 
 returns `Duplex` stream.
 
@@ -56,7 +56,7 @@ The generics:
 - `I` stands for Input data type
 - `O` is optional and stands for Ouput of Duplex destination type.
 
-## pipelineWithOutput<O>(...pipeline parameters): Promise<O[]>;
+## `pipelineWithOutput<O>(...pipeline parameters): Promise<O[]>;`
 
 this works exactly as [pipeline](https://nodejs.org/api/stream.html#streampipelinestreams-options) but collects all end outputs into array and returns them when pipeline is ended.
 
