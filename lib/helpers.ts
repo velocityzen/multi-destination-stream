@@ -30,7 +30,7 @@ export function isIterable(obj: unknown, isAsync = false): boolean {
 export function conformData<I>(
   stream: Writable,
   data: I,
-  encoding: BufferEncoding
+  encoding: BufferEncoding,
 ) {
   if (stream.writableObjectMode) {
     return data;

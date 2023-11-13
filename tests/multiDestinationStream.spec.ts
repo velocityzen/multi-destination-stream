@@ -20,7 +20,7 @@ describe("multiDestinationStream", () => {
               expect(data).toBe(id);
               callback();
             },
-          })
+          }),
         );
       },
     });
@@ -65,7 +65,7 @@ describe("multiDestinationStream", () => {
 
     const output = await pipelineWithOutput<number>(
       Readable.from([1, 1, 2, 2, 1, 1, 2, 2]),
-      transform
+      transform,
     );
 
     expect(output).toEqual([4, 8]);

@@ -12,7 +12,7 @@ export interface MultiDestinationStreamOptions<I = StreamDefaultDataType>
 
 export function createMultiDestinationStream<
   I = StreamDefaultDataType,
-  O = StreamDefaultDataType
+  O = StreamDefaultDataType,
 >({
   getDestinationId,
   createNewDestination,
@@ -32,7 +32,7 @@ export function createMultiDestinationStream<
         destination.write(
           conformData(destination, data, encoding),
           encoding,
-          callback
+          callback,
         );
         return;
       }
@@ -44,7 +44,7 @@ export function createMultiDestinationStream<
           destination.write(
             conformData(destination, data, encoding),
             encoding,
-            callback
+            callback,
           );
 
           if (isReadable(destination)) {
@@ -90,10 +90,10 @@ export function createMultiDestinationStream<
 
   function destroy(
     error?: Error,
-    callback?: (error: Error | null | undefined) => void
+    callback?: (error: Error | null | undefined) => void,
   ) {
-    Object.values(destinations).forEach((destination) =>
-      destination?.destroy()
+    Object.values(destinations).forEach(
+      (destination) => destination?.destroy(),
     );
 
     if (callback) {
