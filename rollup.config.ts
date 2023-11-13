@@ -1,7 +1,14 @@
-import externals from "rollup-plugin-node-externals";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "rollup-plugin-typescript2";
+import resolve from "@rollup/plugin-node-resolve";
+import typescript from "@rollup/plugin-typescript";
+import externals from "rollup-plugin-node-externals";
+
+const plugins = [
+  commonjs(),
+  resolve(),
+  externals(),
+  typescript({ exclude: "rollup.config.ts" }),
+];
 
 export default [
   {
@@ -17,6 +24,6 @@ export default [
     watch: {
       include: "lib/**",
     },
-    plugins: [externals(), typescript(), resolve(), commonjs()],
+    plugins,
   },
 ];
