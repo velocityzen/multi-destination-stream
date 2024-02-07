@@ -95,8 +95,8 @@ export function createMultiDestinationStream<
     error?: Error,
     callback?: (error: Error | null | undefined) => void,
   ) {
-    Object.values(destinations).forEach(
-      (destination) => destination?.destroy(),
+    Object.values(destinations).forEach((destination) =>
+      destination?.destroy(),
     );
 
     if (callback) {
