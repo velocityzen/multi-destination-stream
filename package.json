@@ -1,6 +1,6 @@
 {
   "name": "multi-destination-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multi destination stream",
   "main": "build/index.js",
   "types": "build/lib/index.d.ts",
@@ -48,7 +48,9 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "roots": ["<rootDir>/tests"],
+    "roots": [
+      "<rootDir>/tests"
+    ],
     "testEnvironment": "node",
     "transform": {
       ".ts$": [
