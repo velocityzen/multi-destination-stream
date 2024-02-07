@@ -4,20 +4,23 @@ import { isReadable, conformData } from "./helpers";
 
 type StreamDefaultDataType = string | Buffer | Uint8Array;
 
-export interface MultiDestinationStreamOptions<I = StreamDefaultDataType>
-  extends DuplexOptions {
-  getDestinationId: (data: I) => string;
-  createNewDestination: (data: I, id: string) => Promise<Writable | Duplex>;
+export interface MultiDestinationStreamOptions<
+  I = StreamDefaultDataType,
+  ID extends string = string,
+> extends DuplexOptions {
+  getDestinationId: (data: I) => ID;
+  createNewDestination: (data: I, id: ID) => Promise<Writable | Duplex>;
 }
 
 export function createMultiDestinationStream<
   I = StreamDefaultDataType,
   O = StreamDefaultDataType,
+  ID extends string = string,
 >({
   getDestinationId,
   createNewDestination,
   ...options
-}: MultiDestinationStreamOptions<I>): Duplex {
+}: MultiDestinationStreamOptions<I, ID>): Duplex {
   const destinations: Record<string, Writable | Duplex> = {};
 
   const stream = new Duplex({

@@ -42,15 +42,13 @@
     "release-it": "^17.0.0",
     "rimraf": "^5.0.0",
     "rollup": "^4.4.0",
-    "rollup-plugin-node-externals": "^6.1.0",
+    "rollup-plugin-node-externals": "^7.0.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
   },
   "jest": {
     "preset": "ts-jest",
-    "roots": [
-      "<rootDir>/tests"
-    ],
+    "roots": ["<rootDir>/tests"],
     "testEnvironment": "node",
     "transform": {
       ".ts$": [
